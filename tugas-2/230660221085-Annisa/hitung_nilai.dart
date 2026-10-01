@@ -62,3 +62,4 @@ print('Rata-Rata Skor : ${rataRata.toStringAsFixed(2)}');
 print('Predikat : $hasilPredikat');
 print('=================================================='); 
 }
+
