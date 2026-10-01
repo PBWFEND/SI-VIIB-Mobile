@@ -1,0 +1,10 @@
+flowchart LR
+    A["Aplikasi Mobile<br/>(Mantra Attendance)"]
+    B["Backend SI<br/>(PT Mantra Group)"]
+    C[("Database<br/>(PT Mantra Group)")]
+
+    A -->|"HTTP Request<br/>(JSON)"| B
+    B -->|"HTTP Response<br/>(JSON)"| A
+
+    B -->|"Query atau perubahan data"| C
+    C -->|"Data hasil query"| B
