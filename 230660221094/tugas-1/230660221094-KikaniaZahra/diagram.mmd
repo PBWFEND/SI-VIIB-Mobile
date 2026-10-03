@@ -1,0 +1,9 @@
+flowchart LR
+    A["Aplikasi Mobile<br/>Flutter"]
+    B["Backend SI<br/>REST API"]
+    C[("Database<br/>Perpustakaan")]
+
+    A -->|"HTTP Request"| B
+    B -->|"Query Data"| C
+    C -->|"Data"| B
+    B -->|"HTTP Response"| A
