@@ -1,9 +1,0 @@
-flowchart LR
-    A["Mobile App<br/>FasKampus"] 
-    B["Backend SI<br/>API / Server"]
-    C[("Database")]
-
-    A -->|"HTTP Request"| B
-    B -->|"Query / CRUD"| C
-    C -->|"Data"| B
-    B -->|"HTTP Response"| A

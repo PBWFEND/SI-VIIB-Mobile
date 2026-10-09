@@ -1,8 +1,0 @@
-flowchart LR
-    M["📱 Aplikasi Mobile<br/>Perpustakaan Kampus<br/>(Mahasiswa)"]
-    API["🌐 REST API<br/>Backend SI Perpustakaan"]
-    DB[("🗄️ Database<br/>Buku, Stok, Peminjaman")]
-    M -->|"HTTP Request<br/>(login, katalog, pinjam)"| API
-    API -->|"Validasi & proses bisnis"| DB
-    DB -->|"Data buku dan status pinjam"| API
-    API -->|"HTTP Response<br/>(JSON)"| M

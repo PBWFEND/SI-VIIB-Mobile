@@ -1,6 +1,0 @@
-```mermaid
-flowchart LR
-	A["Aplikasi Mobile<br>(Flutter)"] -->|"HTTP Request<br>(JSON)"| B["Backend SI Pemesanan Ruang<br>(REST API)"]
-	B -->|"Query & Transaksi Pemesanan"| C[("Database Ruangan")]
-	C -->|"Data Ruang & Jadwal"| B
-	B -->|"HTTP Response<br>(JSON)"| A
