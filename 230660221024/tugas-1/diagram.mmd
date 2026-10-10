@@ -1,0 +1,33 @@
+sequenceDiagram
+    autonumber
+    actor Anggota
+    actor Panitia
+    participant Mobile as Aplikasi Mobile Flutter
+    participant Backend as Backend SI
+    participant DB as Database
+
+    Note over Mobile,Backend: Komunikasi menggunakan HTTP Request/Response JSON
+    Note over Backend,DB: Aplikasi mobile tidak mengakses database secara langsung
+
+    Anggota->>Mobile: Pilih kegiatan & tekan check-in
+    Mobile->>Backend: HTTP Request (JSON): POST /absensi/check-in
+    Backend->>Backend: Validasi sesi, hak akses, dan duplikasi check-in
+    Backend->>DB: Simpan/ambil data kehadiran
+    DB-->>Backend: Data tersimpan/terverifikasi
+    Backend-->>Mobile: HTTP Response (JSON): status check-in
+    Mobile-->>Anggota: Tampilkan berhasil/gagal
+
+    Panitia->>Mobile: Kelola sesi absensi
+    Mobile->>Backend: HTTP Request (JSON): buka/tutup sesi absensi
+    Backend->>Backend: Validasi hak akses panitia
+    Backend->>DB: Perbarui status sesi absensi
+    DB-->>Backend: Konfirmasi perubahan
+    Backend-->>Mobile: HTTP Response (JSON): status sesi
+    Mobile-->>Panitia: Tampilkan hasil pengelolaan sesi
+
+    Anggota->>Mobile: Lihat status/riwayat kehadiran
+    Mobile->>Backend: HTTP Request (JSON): GET /absensi/riwayat
+    Backend->>DB: Ambil data kehadiran
+    DB-->>Backend: Data kehadiran
+    Backend-->>Mobile: HTTP Response (JSON): data kehadiran
+    Mobile-->>Anggota: Tampilkan status/riwayat kehadiran
