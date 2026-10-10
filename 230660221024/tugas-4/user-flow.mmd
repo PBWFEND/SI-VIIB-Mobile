@@ -1,0 +1,14 @@
+flowchart TD
+    S(["Mulai: anggota membuka aplikasi"]) --> A["Halaman daftar kegiatan:<br>s3"]
+    A --> B["Pilih kegiatan yang ingin dihadiri"]
+    B --> C["Halaman detail kegiatan:<br>s4"]
+    C --> D{"Sesi absensi sedang dibuka?"}
+    D -->|s13| E["Tampilkan pesan:<br>s5"]
+    E --> A
+    D -->|s14| F["Tekan tombol 'Check-in'"]
+    F --> G["Kirim permintaan check-in ke backend"]
+    G --> H{"Kehadiran berhasil tercatat?"}
+    H -->|s15| I["Tampilkan pesan gagal:<br>s6"]
+    I --> C
+    H -->|s16| J["Tampilkan konfirmasi:<br>s7"]
+    J --> T(["Tujuan tercapai:<br>kehadiran anggota tercatat"])

@@ -1,0 +1,28 @@
+graph TD
+    A["main() → runApp()"] --> B["AbsensiApp : StatelessWidget"]
+    B --> C["MaterialApp<br/>title: Absensi Organisasi Mahasiswa"]
+    C --> D["HalamanDaftarKegiatan : StatelessWidget"]
+    D --> E["Scaffold"]
+
+    E --> F["AppBar: 'Absensi Organisasi'"]
+    F --> F1["IconButton: refresh"]
+
+    E --> G["body: Column"]
+    G --> H["Padding"]
+    H --> H1["Column header"]
+    H1 --> H11["Text: 'Halo, Anggota!'"]
+    H1 --> H12["Text: petunjuk check-in"]
+
+    G --> I["Expanded"]
+    I --> J["ListView.builder"]
+    J --> K["KartuKegiatan × 5"]
+    K --> L["Card"]
+    L --> L1["Padding"]
+    L1 --> L2["Row"]
+    L2 --> L21["CircleAvatar + Icon"]
+    L2 --> L22["Expanded: Column"]
+    L22 --> L221["Text: nama kegiatan"]
+    L22 --> L222["Text: tanggal • lokasi"]
+    L2 --> L23["Container: badge status"]
+
+    E --> M["FloatingActionButton: +"]
