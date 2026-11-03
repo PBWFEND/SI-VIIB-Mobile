@@ -1,0 +1,17 @@
+graph TD
+    A([Mulai: Buka Aplikasi]) --> B[Halaman Dasbor Utama]
+    B --> C[Klik menu 'Absensi Masuk']
+    C --> D[Halaman Form Absensi & Akses GPS]
+    D --> E{Apakah Lokasi GPS ditemukan?}
+    E -- Tidak --> F[Tampil Notifikasi 'Lokasi gagal dilacak']
+    F --> D
+    E -- Ya --> G[Ambil Foto Wajah/Selfie]
+    G --> H{Apakah hasil foto jelas?}
+    H -- Tidak --> I[Tampil Opsi 'Ulangi Ambil Foto']
+    I --> G
+    H -- Ya --> J[Klik Tombol 'Kirim Absensi']
+    J --> K{Apakah Jaringan Internet Stabil?}
+    K -- Tidak --> L[Tampil Peringatan 'Koneksi Terputus, Coba Lagi']
+    L --> J
+    K -- Ya --> M[Sistem Menyimpan Data Absensi]
+    M --> N([Tujuan: Tampil Halaman Sukses Absen])
