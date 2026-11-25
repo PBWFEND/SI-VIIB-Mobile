@@ -1,0 +1,19 @@
+name: kantin_kampus_rc1
+description: Kantin Kampus Digital v1.0.0-rc.1 - Integrasi Project dan Penyempurnaan UI/UX (Tugas 14)
+publish_to: 'none'
+version: 1.0.0-rc.1+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true

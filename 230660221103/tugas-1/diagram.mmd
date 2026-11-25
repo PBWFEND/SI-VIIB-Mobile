@@ -1,0 +1,5 @@
+flowchart LR
+    A["📱 Aplikasi Mobile Kantin<br>(Flutter Client)"] -->|"1. HTTP Request (JSON)<br>Request menu & kirim pesanan"| B["🖥️ Backend SI Kantin<br>(REST API)"]
+    B -->|"2. Query menu & simpan transaksi"| C[("🗄️ Database Kantin")]
+    C -->|"3. Data menu & nomor antrean"| B
+    B -->|"4. HTTP Response (JSON)<br>Status pesanan & daftar menu"| A
