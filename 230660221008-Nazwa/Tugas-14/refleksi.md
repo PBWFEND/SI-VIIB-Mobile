@@ -1,0 +1,5 @@
+# Refleksi Integrasi Project dan Candidate Release — Tugas 14
+
+1. Menyatukan seluruh halaman ke dalam satu model data `Pengaduan` dan satu sumber data `PengaduanRepository` membuat perubahan data dari formulir maupun halaman detail langsung tercermin pada daftar utama tanpa ketidakkonsistenan state.
+2. Penggunaan `LayoutBuilder` pada titik henti `720 px` mempermudah penyesuaian tampilan antara tata letak satu kolom pada layar sempit (`400 px`) dan tata letak dua kolom berdampingan pada layar lebar (`900 px`) tanpa mengalami overflow.
+3. Penyusunan catatan rilis dan skenario uji penerima menyadarkan saya bahwa versi kandidat rilis tidak cukup hanya berjalan di komputer pengembang, tetapi juga harus memiliki dokumentasi pengujian, batasan lingkungan, dan aksesibilitas yang jelas bagi penguji lain.
