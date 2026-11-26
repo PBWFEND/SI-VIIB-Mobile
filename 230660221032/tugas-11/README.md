@@ -25,15 +25,15 @@ Pada Tugas 11 ini, aplikasi **RadiAct (UNSAP Radio)** diintegrasikan dengan fitu
 ### Target Verifikasi dan Langkah Menjalankan
 - **Target Verifikasi:** Google Chrome (Flutter Web) pada Windows.
 - **Langkah Menjalankan Aplikasi:**
-  1. Jalankan perintah berikut di terminal direktori proyek untuk mengunduh package:
+  * Jalankan perintah berikut di terminal direktori proyek untuk mengunduh package:
      ```bash
      flutter pub get
      ```
-  2. Jalankan aplikasi pada target Google Chrome:
+  * Jalankan aplikasi pada target Google Chrome:
      ```bash
      flutter run -d chrome
      ```
-  3. Klik tombol **Lampirkan Naskah** pada kartu jadwal untuk memilih dokumen (`.pdf`, `.doc`, `.docx`, maks 2 MB), lalu ubah status program ke **Tayang** melalui tombol **Ubah Status**.
+  * Klik tombol **Lampirkan Naskah** pada kartu jadwal untuk memilih dokumen (`.pdf`, `.doc`, `.docx`, maks 2 MB), lalu ubah status program ke **Tayang** melalui tombol **Ubah Status**.
 - **Batasan Pengujian pada Target Web:** Pada Flutter Web, akses langsung ke path file lokal dibatasi oleh browser (`file.path` tidak tersedia), sehingga pembacaan isi file menggunakan `bytes` (`withData: true`) dan penyimpanan masih bersifat sementara di memori (*in-memory*), belum diunggah ke server permanen.
 
 ## 3. Skenario Pengujian
@@ -44,8 +44,6 @@ Pada Tugas 11 ini, aplikasi **RadiAct (UNSAP Radio)** diintegrasikan dengan fitu
 | **Pengguna membatalkan aksi** | Data lampiran file sebelumnya tidak terhapus, tidak dianggap error, dan muncul pesan info pembatalan. | File lampiran lama tetap dipertahankan pada kartu jadwal dan muncul info bahwa pemilihan file dibatalkan. |
 | **Permission ditolak** | Aplikasi tidak *crash*, menampilkan pesan izin ditolak yang informatif, serta menyediakan tombol *Coba Lagi*. | `PlatformException` ditangkap oleh `FileNaskahService` dan antarmuka menampilkan banner merah peringatan beserta tombol *Coba Lagi*. |
 | **Package atau perangkat menghasilkan error** | File > 2 MB atau format selain PDF/DOC/DOCX ditolak dengan pesan error yang jelas beserta tombol *Coba Lagi*. | Banner peringatan merah tampil menjelaskan kesalahan format/ukuran file lengkap dengan tombol *Coba Lagi*. |
-
----
 
 ## 4. Struktur Folder Pengumpulan
 ```text
